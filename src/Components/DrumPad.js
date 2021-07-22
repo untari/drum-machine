@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 const activeStyle = {
-    backgroundColor: '#32a852',
-    boxShado: '0 3px #334d3a',
+    backgroundColor: 'orange',
+    boxShado: '0 3px orange',
     height: 77,
     marginTop: 13
 };
@@ -14,10 +14,45 @@ const inactiveStyle = {
 };
 
 class DrumPad extends Component {
+    constructor(props){
+        super(props);
+            this.state = {
+                padStyle: inactiveStyle
+            };
+            this.activePad = this.activePad.bind(this);
+            
+            activePad() {
+                if (this.props.power){
+                    if(this.state.padStyle.backgroundColor === 'orange')
+                        this.seState({
+                            padStyle: inactiveStyle
+                        });
+                } else {
+                    this.setState({
+                        padStyle: activeStyle
+                    });
+                }
+            } else if (this.state.padStyle.marginTop === 13){
+                this.setState({
+                    padStyle: inactiveStyle
+                });
+            } else {
+                this.setState({
+                    padStyle: {
+                        height: 77,
+                        marginTop: 13,
+                        backgroundColor: 'grey',
+                        boxShadow: '0 3px grey'
+                    }
+                });
+            }
+    }
     render() {
         return(
-            <div className="drum-pad" id="drum-pad">
-                <h2>Drum Pad</h2>
+            <div className="drum-pad" 
+                id="drum-pad"
+                style={this.state.padStyle}>
+                
             </div>
         );
     }
