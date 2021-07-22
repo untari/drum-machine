@@ -21,13 +21,13 @@ class DrumPad extends Component {
             };
             this.playSound = this.playSound.bind(this);
             this.handleKeyPress = this.handleKeyPress.bind(this);
-            this.activetePad = this.activetePad.bind(this);
+            this.activatePad = this.activatePad.bind(this);
     }
     componentDidMount(){
-        document.addEventLIstener('keydown', this.handleKeyPress);
+        document.addEventListener('keydown', this.handleKeyPress);
     }
     componentWillUnmount(){
-        document.removeEventLIstener('keydown', this.handleKeyPress);
+        document.removeEventListener('keydown', this.handleKeyPress);
     }
     
     handleKeyPress(e){
