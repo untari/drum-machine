@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DrumPad from './DrumPad';
 
 const bankOne = [
   {
@@ -121,7 +122,7 @@ class PadBank extends Component {
     render() {
         let padBank;
         if (this.props.power){
-            padBank = this.props.currentPadBank.map((drumObj, i, padBanker) => {
+            padBank = this.props.currentPadBank.map((drumObj, i, padBankArr) => {
                 return(
                     <DrumPad
                         clip={padBankArr[i].url}
@@ -136,7 +137,7 @@ class PadBank extends Component {
         return(
             <div className="pad-bank">
                 {padBank}
-            </div>;
+            </div>
         );
     }
 };

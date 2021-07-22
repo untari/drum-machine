@@ -19,8 +19,9 @@ class DrumPad extends Component {
             this.state = {
                 padStyle: inactiveStyle
             };
+            this.playSound = this.playSound.bind(this);
             this.handleKeyPress = this.handleKeyPress.bind(this);
-            this.activePad = this.activePad.bind(this);
+            this.activetePad = this.activetePad.bind(this);
     }
     componentDidMount(){
         document.addEventLIstener('keydown', this.handleKeyPress);
