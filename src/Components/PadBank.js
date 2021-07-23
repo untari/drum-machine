@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DrumPad from './DrumPad';
+import '../App.css';
 
 
 

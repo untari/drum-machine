@@ -69,13 +69,13 @@ class DrumPad extends Component {
         sound.play();
         this.activatePad();
         setTimeout(() => this.activatePad(), 100);
-        this.props.updateDisplay(this.props.clip.replace(/-/g, ' '));
+        this.props.updateDisplay(this.props.clipId.replace(/-/g, ' '));
     }
     render() {
         return(
             <div
                 className='drum-pad'
-                id={this.props.clip}
+                id={this.props.clipId}
                 onClick={this.playSound}
                 style={this.state.padStyle}
                 >
