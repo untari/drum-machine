@@ -62,21 +62,23 @@ class DrumPad extends Component {
         });
         }
     }
-    
-    playSound(){
+        
+    playSound() {
         const sound = document.getElementById(this.props.keyTrigger);
         sound.currentTime = 0;
         sound.play();
-        this.activetePad();
-        setTimeout(() => this.activetePad(), 100);
-        this.props.updateDisplay(this.props.clipId(/-/g, ' '));
+        this.activatePad();
+        setTimeout(() => this.activatePad(), 100);
+        this.props.updateDisplay(this.props.clip.replace(/-/g, ' '));
     }
     render() {
         return(
-            <div className="drum-pad" 
-                id={this.props.clipId}
+            <div
+                className='drum-pad'
+                id={this.props.clip}
                 onClick={this.playSound}
-                style={this.state.padStyle}>
+                style={this.state.padStyle}
+                >
                 
                 <audio 
                     className='clip'
